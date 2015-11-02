@@ -10,10 +10,11 @@
         }
     ],
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "symfony/event-dispatcher": "~2.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.1"
+        "phpunit/phpunit": "@stable"
     },
     "suggest": {
         "symfony/yaml": "if you want to use YAML serializer",

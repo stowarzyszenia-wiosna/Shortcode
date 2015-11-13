@@ -65,14 +65,16 @@ final class Processor implements ProcessorInterface
             $this->prepareHandlerContext($shortcode, $context);
             $handler = $this->handlers->get($shortcode->getName());
             $replace = $this->processHandler($shortcode, $context, $handler);
-            $length = mb_strlen($shortcode->getText());
+            $length = strlen($shortcode->getText());
+            // $length = mb_strlen($shortcode->getText());
 
             $replaces[] = array($replace, $shortcode->getOffset(), $length);
         }
         $replaces = array_reverse(array_filter($replaces));
 
         return array_reduce($replaces, function ($state, array $item) {
-            return mb_substr($state, 0, $item[1]).$item[0].mb_substr($state, $item[1] + $item[2]);
+            // return mb_substr($state, 0, $item[1]).$item[0].mb_substr($state, $item[1] + $item[2]);
+            return substr_replace($state, $item[0], $item[1], $item[2]);
         }, $text);
     }
 

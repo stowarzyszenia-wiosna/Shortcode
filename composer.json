@@ -1,5 +1,5 @@
 {
-    "name": "thunderer/shortcode",
+    "name": "stowarzyszenia-wiosna/shortcode",
     "description": "Advanced shortcode (BBCode) parser and engine for PHP",
     "keywords": ["shortcode", "bbcode", "parser", "engine", "library"],
     "license": "MIT",
